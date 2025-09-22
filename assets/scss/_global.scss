@@ -1,0 +1,31 @@
+.marquee {
+  &-container {
+    overflow: hidden;
+  }
+
+  &-content {
+    gap: 24px;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}
+
+.tag {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: bold;
+  color: var(--color-primary);
+  padding-left: 43px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35px;
+    height: 2px;
+    background-color: var(--color-primary);
+  }
+}

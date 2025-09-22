@@ -1,0 +1,44 @@
+:root {
+  --color-primary: #2dc158;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --font-heading: "Neue Plak Text", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-white);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.color-primary {
+  color: var(--color-primary);
+}
+
+.h1-font {
+  font-size: 67px;
+  line-height: 80px;
+  font-weight: 900;
+  font-family: var(--font-heading);
+}
+
+.b3-font {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 900;
+  font-family: var(--font-body);
+}
+
+.b1-bold {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 800;
+}
