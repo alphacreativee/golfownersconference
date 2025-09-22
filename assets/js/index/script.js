@@ -62,9 +62,21 @@ function marquee() {
   });
 }
 
+function sectionOurMission() {
+  if ($(".our-mission").length < 1) return;
+
+  const missionItems = $(".our-mission .mission-item");
+
+  missionItems.on("mouseenter", function () {
+    missionItems.removeClass("active");
+    $(this).addClass("active");
+  });
+}
+
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   marquee();
+  sectionOurMission();
 };
 
 preloadImages("img").then(() => {
