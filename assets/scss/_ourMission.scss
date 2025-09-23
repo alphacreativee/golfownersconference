@@ -66,6 +66,8 @@
         .item-content {
           opacity: 1;
           visibility: visible;
+          transform: translate(0, -50%);
+          transition-duration: 0.4s;
           transition-delay: 0.6s;
         }
 
@@ -98,7 +100,7 @@
           width: 80%;
           top: 50%;
           left: 32px;
-          transform: translate(0, -50%);
+          transform: translate(0, calc(10px - 50%));
           opacity: 0;
           visibility: hidden;
           transition-delay: 0;

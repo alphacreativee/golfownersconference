@@ -121,6 +121,63 @@ body {
   -moz-osx-font-smoothing: grayscale !important;
 }
 
+.dropdown-custom {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-custom-menu {
+  position: absolute;
+  bottom: -29px;
+  left: -16px;
+  transform: translateY(100%);
+  background-color: var(--color-white);
+  width: 120px;
+  padding: 8px;
+  clip-path: inset(0 0 100% 0);
+  will-change: clip-path;
+  transition: clip-path 0.3s ease;
+  pointer-events: none;
+}
+.dropdown-custom-menu.dropdown--active {
+  clip-path: inset(0 0 0 0);
+  pointer-events: auto;
+}
+
+.dropdown-custom-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.dropdown-custom-btn .value-select {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.dropdown-custom-btn .value-select span {
+  color: var(--color-white);
+  font-size: 10px;
+  line-height: 11px;
+  font-weight: bold;
+}
+
+.dropdown-custom-item {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding: 8px;
+  transition: all 0.3s ease;
+}
+.dropdown-custom-item:hover {
+  background-color: rgba(23, 75, 156, 0.1);
+}
+.dropdown-custom-item span {
+  color: var(--color-white);
+  font-size: 10px;
+  line-height: 11px;
+  font-weight: bold;
+}
+
 .marquee-container {
   overflow: hidden;
 }
@@ -159,6 +216,7 @@ body {
 }
 #header .header-container {
   display: grid;
+  align-items: center;
   grid-template-columns: 20% 60% 20%;
 }
 #header .logo {
@@ -184,6 +242,35 @@ body {
   font-size: 10px;
   line-height: 11px;
   font-weight: bold;
+}
+#header .language .dropdown-custom {
+  width: max-content;
+  margin-left: auto;
+}
+#header .language .dropdown-custom-btn {
+  padding: 12px 14px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+#header .language .dropdown-custom-btn .value-select img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+#header .language .dropdown-custom-menu {
+  width: 80px;
+  bottom: -10px;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+#header .language .dropdown-custom-item img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .intro {
@@ -338,6 +425,8 @@ body {
 .our-mission .mission-list .mission-item.active .item-content {
   opacity: 1;
   visibility: visible;
+  transform: translate(0, -50%);
+  transition-duration: 0.4s;
   transition-delay: 0.6s;
 }
 .our-mission .mission-list .mission-item.active .item-title-small {
@@ -364,7 +453,7 @@ body {
   width: 80%;
   top: 50%;
   left: 32px;
-  transform: translate(0, -50%);
+  transform: translate(0, calc(10px - 50%));
   opacity: 0;
   visibility: hidden;
   transition-delay: 0;

@@ -11,6 +11,84 @@ gsap.ticker.add((time) => {
 gsap.ticker.lagSmoothing(0);
 // end lenis
 
+function customDropdown() {
+  const dropdowns = document.querySelectorAll(".dropdown-custom");
+
+  console.log(dropdowns);
+
+  dropdowns.forEach((dropdown) => {
+    const btnDropdown = dropdown.querySelector(".dropdown-custom-btn");
+    const dropdownMenu = dropdown.querySelector(".dropdown-custom-menu");
+    const dropdownItems = dropdown.querySelectorAll(".dropdown-custom-item");
+    const valueSelect = dropdown.querySelector(".value-select");
+
+    // Toggle dropdown on button click
+    btnDropdown.addEventListener("click", function (e) {
+      e.stopPropagation();
+      closeAllDropdowns(dropdown);
+      dropdownMenu.classList.toggle("dropdown--active");
+      btnDropdown.classList.toggle("--active");
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener("click", function () {
+      closeAllDropdowns();
+    });
+
+    // Handle item selection
+    dropdownItems.forEach((item) => {
+      item.addEventListener("click", function (e) {
+        e.stopPropagation();
+
+        // Store current values from the button
+        const currentImgEl = valueSelect.querySelector("img");
+        const currentImg = currentImgEl ? currentImgEl.src : "";
+        const currentText = valueSelect.querySelector("span").textContent;
+        const currentHtml = valueSelect.innerHTML;
+
+        // Store clicked item values
+        const clickedHtml = item.innerHTML;
+
+        // Update the button with clicked item values
+        valueSelect.innerHTML = clickedHtml;
+
+        const isSelectTime = currentText.trim() === "Time";
+
+        // Update the clicked item with the previous button values
+        if (!isSelectTime) {
+          if (currentImg) {
+            item.innerHTML = `<img src="${currentImg}" alt="" /><span>${currentText}</span>`;
+          } else {
+            item.innerHTML = `<span>${currentText}</span>`;
+          }
+        }
+
+        closeAllDropdowns();
+      });
+    });
+
+    // Close dropdown on scroll
+    window.addEventListener("scroll", function () {
+      if (dropdownMenu.closest(".header-lang")) {
+        dropdownMenu.classList.remove("dropdown--active");
+        btnDropdown.classList.remove("--active");
+      }
+    });
+  });
+
+  function closeAllDropdowns(exception) {
+    dropdowns.forEach((dropdown) => {
+      const menu = dropdown.querySelector(".dropdown-custom-menu");
+      const btn = dropdown.querySelector(".dropdown-custom-btn");
+
+      if (!exception || dropdown !== exception) {
+        menu.classList.remove("dropdown--active");
+        btn.classList.remove("--active");
+      }
+    });
+  }
+}
+
 function marquee() {
   document.querySelectorAll(".marquee-container").forEach((container) => {
     const content = container.querySelector(".marquee-content");
@@ -77,6 +155,7 @@ const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   marquee();
   sectionOurMission();
+  customDropdown();
 };
 
 preloadImages("img").then(() => {

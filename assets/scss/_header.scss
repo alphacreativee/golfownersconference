@@ -8,6 +8,7 @@
 
   .header-container {
     display: grid;
+    align-items: center;
     grid-template-columns: 20% 60% 20%;
   }
 
@@ -36,6 +37,46 @@
       font-size: 10px;
       line-height: 11px;
       font-weight: bold;
+    }
+  }
+
+  .language {
+    .dropdown-custom {
+      width: max-content;
+      margin-left: auto;
+
+      &-btn {
+        padding: 12px 14px;
+        border-radius: 4px;
+        background-color: rgba($color: #fff, $alpha: 0.1);
+        backdrop-filter: blur(10px);
+
+        .value-select {
+          img {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+        }
+      }
+
+      &-menu {
+        width: 80px;
+        bottom: -10px;
+        left: 0;
+        background-color: rgba($color: #fff, $alpha: 0.1);
+        backdrop-filter: blur(10px);
+      }
+
+      &-item {
+        img {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
     }
   }
 }
