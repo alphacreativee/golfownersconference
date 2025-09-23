@@ -30,15 +30,29 @@ body {
   font-family: var(--font-heading);
 }
 
+.b1-bold {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 800;
+}
+
+.b2-font {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 900;
+  font-family: var(--font-body);
+}
+
+.b3-medium {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 500;
+  font-family: var(--font-body);
+}
+
 .b3-font {
   font-size: 13px;
   line-height: 20px;
   font-weight: 900;
   font-family: var(--font-body);
-}
-
-.b1-bold {
-  font-size: 18px;
-  line-height: 28px;
-  font-weight: 800;
 }

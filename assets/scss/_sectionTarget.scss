@@ -1,0 +1,76 @@
+.our-target {
+  background-image: url("../../images/draf/bg-section-target.webp");
+  background-repeat: no-repeat;
+  background-position: bottom bottom;
+  background-size: cover;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(3, 6, 5, 1) 0%,
+      rgba(3, 6, 5, 0.5) 45%,
+      rgba(3, 6, 5, 0.5) 55%,
+      rgba(3, 6, 5, 1) 100%
+    );
+
+    z-index: 1;
+  }
+
+  .target-container {
+    position: relative;
+    z-index: 2;
+    padding: 100px 0 400px;
+
+    .title {
+      margin-top: 16px;
+
+      span {
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  .target-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 48px;
+    gap: 24px;
+
+    .target-item {
+      border-radius: 16px;
+      padding: 24px;
+      background-image: url("../../images/bg-mission-main-left.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      transition: all 0.4s ease;
+
+      &:nth-child(even) {
+        background-image: url("../../images/bg-mission-main-right.png");
+      }
+
+      .icon {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 40px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .item-title {
+        margin-bottom: 8px;
+      }
+    }
+  }
+}

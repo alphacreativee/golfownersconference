@@ -30,17 +30,31 @@ body {
   font-family: var(--font-heading);
 }
 
+.b1-bold {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 800;
+}
+
+.b2-font {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 900;
+  font-family: var(--font-body);
+}
+
+.b3-medium {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 500;
+  font-family: var(--font-body);
+}
+
 .b3-font {
   font-size: 13px;
   line-height: 20px;
   font-weight: 900;
   font-family: var(--font-body);
-}
-
-.b1-bold {
-  font-size: 18px;
-  line-height: 28px;
-  font-weight: 800;
 }
 
 *,
@@ -484,4 +498,180 @@ body {
 .our-mission .mission-list .image .image-active {
   opacity: 0;
   visibility: hidden;
+}
+
+.member {
+  background-image: url("../../images/bg-section-member.webp");
+  position: relative;
+}
+.member::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgb(3, 6, 5) 0%, rgba(3, 6, 5, 0.5) 45%, rgba(3, 6, 5, 0.5) 55%, rgb(3, 6, 5) 100%);
+  z-index: 1;
+}
+.member .col-content .title span {
+  color: var(--color-primary);
+}
+.member .col-personal .personal-item .image {
+  width: 100%;
+  aspect-ratio: 282/344;
+  position: relative;
+  border-bottom: 4px solid var(--color-primary);
+}
+.member .col-personal .personal-item .image::after {
+  content: "";
+  width: 100%;
+  height: 110px;
+  background: linear-gradient(to top, rgb(45, 193, 88) 0%, rgba(45, 193, 88, 0) 100%);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.member .col-personal .personal-item .image::before {
+  content: "";
+  width: calc(100% - 32px);
+  aspect-ratio: 250/222;
+  background-image: url("../../images/bg-flag.png");
+  background-size: contain;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+.member .col-personal .personal-item .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 3;
+}
+.member .col-personal .personal-item .content {
+  margin-top: 16px;
+}
+.member .col-personal .personal-item .content .name {
+  margin-top: 12px;
+}
+.member .col-personal .swiper-control {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 40px;
+}
+.member .col-personal .swiper-control .swiper-pagination {
+  position: relative;
+  transform: none;
+  top: unset;
+  left: unset;
+  bottom: unset;
+  right: unset;
+  height: 7px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  padding: 3px;
+  width: calc(100% - 106px);
+}
+.member .col-personal .swiper-control .swiper-pagination .swiper-pagination-progressbar-fill {
+  background-color: var(--color-primary);
+  height: 1px;
+  border-radius: 4px;
+  top: 3px;
+  left: 3px;
+  width: calc(100% - 6px);
+}
+.member .col-personal .swiper-control .swiper-arrows {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.member .col-personal .swiper-control .swiper-button-next,
+.member .col-personal .swiper-control .swiper-button-prev {
+  position: unset;
+  transform: none;
+  display: flex;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+}
+.member .col-personal .swiper-control .swiper-button-next::after,
+.member .col-personal .swiper-control .swiper-button-prev::after {
+  display: none;
+}
+.member .col-personal .swiper-control .swiper-button-prev svg {
+  transform: scaleX(-1);
+  width: 20px;
+  height: auto;
+}
+.member-container {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  padding: 80px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.our-target {
+  background-image: url("../../images/draf/bg-section-target.webp");
+  background-repeat: no-repeat;
+  background-position: bottom bottom;
+  background-size: cover;
+  position: relative;
+}
+.our-target::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgb(3, 6, 5) 0%, rgba(3, 6, 5, 0.5) 45%, rgba(3, 6, 5, 0.5) 55%, rgb(3, 6, 5) 100%);
+  z-index: 1;
+}
+.our-target .target-container {
+  position: relative;
+  z-index: 2;
+  padding: 100px 0 400px;
+}
+.our-target .target-container .title {
+  margin-top: 16px;
+}
+.our-target .target-container .title span {
+  color: var(--color-primary);
+}
+.our-target .target-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 48px;
+  gap: 24px;
+}
+.our-target .target-list .target-item {
+  border-radius: 16px;
+  padding: 24px;
+  background-image: url("../../images/bg-mission-main-left.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: all 0.4s ease;
+}
+.our-target .target-list .target-item:nth-child(even) {
+  background-image: url("../../images/bg-mission-main-right.png");
+}
+.our-target .target-list .target-item .icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 40px;
+}
+.our-target .target-list .target-item .icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.our-target .target-list .target-item .item-title {
+  margin-bottom: 8px;
 }

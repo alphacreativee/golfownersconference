@@ -151,11 +151,42 @@ function sectionOurMission() {
   });
 }
 
+function personalSwiper() {
+  if ($(".personal-swiper").length) {
+    new Swiper(".personal-swiper", {
+      slidesPerView: 2.5,
+      spaceBetween: 16,
+      loop: false,
+      speed: 600,
+      pagination: {
+        el: ".personal-swiper .swiper-pagination",
+        type: "progressbar"
+      },
+      navigation: {
+        nextEl: ".personal-swiper .swiper-button-next",
+        prevEl: ".personal-swiper .swiper-button-prev"
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1
+        },
+        768: {
+          slidesPerView: 2
+        },
+        1024: {
+          slidesPerView: 2.5
+        }
+      }
+    });
+  }
+}
+
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   marquee();
   sectionOurMission();
   customDropdown();
+  personalSwiper();
 };
 
 preloadImages("img").then(() => {
