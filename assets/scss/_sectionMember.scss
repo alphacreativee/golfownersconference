@@ -79,66 +79,6 @@
         }
       }
     }
-
-    .swiper-control {
-      margin-top: 50px;
-      display: flex;
-      flex-wrap: nowrap;
-      align-items: center;
-      gap: 40px;
-
-      .swiper-pagination {
-        position: relative;
-        transform: none;
-        top: unset;
-        left: unset;
-        bottom: unset;
-        right: unset;
-        height: 7px;
-        background-color: rgba($color: #fff, $alpha: 0.1);
-        border-radius: 4px;
-        padding: 3px;
-        width: calc(100% - 106px);
-
-        .swiper-pagination-progressbar-fill {
-          background-color: var(--color-primary);
-          height: 1px;
-          border-radius: 4px;
-          top: 3px;
-          left: 3px;
-          width: calc(100% - 6px);
-        }
-      }
-
-      .swiper-arrows {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-
-      .swiper-button-next,
-      .swiper-button-prev {
-        position: unset;
-        transform: none;
-        display: flex;
-        align-items: center;
-        width: 20px;
-        height: 20px;
-        margin: 0;
-
-        &::after {
-          display: none;
-        }
-      }
-
-      .swiper-button-prev {
-        svg {
-          transform: scaleX(-1);
-          width: 20px;
-          height: auto;
-        }
-      }
-    }
   }
 
   &-container {

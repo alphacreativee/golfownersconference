@@ -181,12 +181,43 @@ function personalSwiper() {
   }
 }
 
+function participantsSwiper() {
+  if ($(".participants-swiper").length) {
+    new Swiper(".participants-swiper", {
+      slidesPerView: 2.5,
+      spaceBetween: 16,
+      loop: false,
+      speed: 600,
+      pagination: {
+        el: ".participants-swiper .swiper-pagination",
+        type: "progressbar"
+      },
+      navigation: {
+        nextEl: ".participants-swiper .swiper-button-next",
+        prevEl: ".participants-swiper .swiper-button-prev"
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 2
+        },
+        768: {
+          slidesPerView: 2
+        },
+        1024: {
+          slidesPerView: 3
+        }
+      }
+    });
+  }
+}
+
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   marquee();
   sectionOurMission();
   customDropdown();
   personalSwiper();
+  participantsSwiper();
 };
 
 preloadImages("img").then(() => {
