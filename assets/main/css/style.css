@@ -151,6 +151,7 @@ body {
   position: absolute;
   bottom: -29px;
   left: -16px;
+  border-radius: 4px;
   transform: translateY(100%);
   background-color: var(--color-white);
   width: 120px;
@@ -173,7 +174,7 @@ body {
 .dropdown-custom-btn .value-select {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
 }
 .dropdown-custom-btn .value-select span {
   color: var(--color-white);
@@ -184,13 +185,14 @@ body {
 
 .dropdown-custom-item {
   display: flex;
-  gap: 4px;
+  gap: 6px;
   align-items: center;
   padding: 8px;
+  border-radius: 4px;
   transition: all 0.3s ease;
 }
 .dropdown-custom-item:hover {
-  background-color: rgba(23, 75, 156, 0.1);
+  background-color: rgba(45, 193, 88, 0.1);
 }
 .dropdown-custom-item span {
   color: var(--color-white);
@@ -281,7 +283,7 @@ body {
 }
 
 #header {
-  width: calc(100% - 180px);
+  width: 100%;
   position: fixed;
   z-index: 999;
   top: 28px;
@@ -308,6 +310,7 @@ body {
   width: max-content;
   margin: 0 auto;
   backdrop-filter: blur(10px);
+  border-radius: 4px;
 }
 #header .menu ul {
   display: flex;
@@ -316,6 +319,30 @@ body {
   font-size: 10px;
   line-height: 11px;
   font-weight: bold;
+}
+#header .menu ul a {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#header .menu ul a::before {
+  content: "";
+  position: absolute;
+  bottom: -14px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  border-radius: 4px;
+  background-color: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#header .menu ul a.active, #header .menu ul a:hover {
+  color: var(--color-primary);
+}
+#header .menu ul a.active::before, #header .menu ul a:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 #header .language .dropdown-custom {
   width: max-content;
@@ -547,7 +574,7 @@ body {
   width: 70%;
   position: absolute;
   top: 50%;
-  left: 80px;
+  left: 12px;
   transform: translateY(-50%);
 }
 .intro-line {
@@ -739,6 +766,9 @@ body {
   background: linear-gradient(to bottom, rgb(3, 6, 5) 0%, rgba(3, 6, 5, 0.5) 45%, rgba(3, 6, 5, 0.5) 55%, rgb(3, 6, 5) 100%);
   z-index: 1;
 }
+.member .col-content {
+  padding-right: 40px;
+}
 .member .col-content .title span {
   color: var(--color-primary);
 }
@@ -825,20 +855,18 @@ body {
 }
 .our-target .target-list .target-item {
   border-radius: 16px;
+  overflow: hidden;
   padding: 24px;
-  background-image: url("../../images/bg-mission-main-left.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-color: var(--color-primary);
   transition: all 0.4s ease;
-}
-.our-target .target-list .target-item:nth-child(even) {
-  background-image: url("../../images/bg-mission-main-right.png");
+  position: relative;
 }
 .our-target .target-list .target-item .icon {
   width: 80px;
   height: 80px;
   margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
 }
 .our-target .target-list .target-item .icon img {
   width: 100%;
@@ -847,6 +875,23 @@ body {
 }
 .our-target .target-list .target-item .item-title {
   margin-bottom: 8px;
+  position: relative;
+  z-index: 2;
+}
+.our-target .target-list .target-item .item-desc {
+  position: relative;
+  z-index: 2;
+}
+.our-target .target-list .target-item .image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  transition: all 0.4s ease;
+}
+.our-target .target-list .target-item:hover .image {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .participants {
@@ -877,11 +922,15 @@ body {
   background-color: var(--color-primary);
   transition: all 0.4s ease;
 }
+.participants-item .image {
+  width: 100%;
+  aspect-ratio: 339/279;
+  transition: all 0.5s ease;
+}
 .participants-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: all 0.5s ease;
 }
 .participants-item .item-title {
   position: absolute;
@@ -900,7 +949,7 @@ body {
   visibility: hidden;
   transition: all 0.5s ease;
 }
-.participants-item:hover img {
+.participants-item:hover .image {
   opacity: 0;
   visibility: hidden;
 }

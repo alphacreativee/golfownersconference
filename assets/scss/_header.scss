@@ -1,5 +1,5 @@
 #header {
-  width: calc(100% - 180px);
+  width: 100%;
   position: fixed;
   z-index: 999;
   top: 28px;
@@ -29,6 +29,7 @@
     width: max-content;
     margin: 0 auto;
     backdrop-filter: blur(10px);
+    border-radius: 4px;
 
     ul {
       display: flex;
@@ -37,6 +38,35 @@
       font-size: 10px;
       line-height: 11px;
       font-weight: bold;
+
+      a {
+        position: relative;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: -14px;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          border-radius: 4px;
+          background-color: var(--color-primary);
+          transform: scaleX(0);
+          transform-origin: bottom right;
+          transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        &.active,
+        &:hover {
+          color: var(--color-primary);
+
+          &::before {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+          }
+        }
+      }
     }
   }
 

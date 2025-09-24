@@ -82,17 +82,22 @@
     <header id="header"></header>
     <!-- end header -->
     <main>
-      <section class="intro">
+      <section class="intro" id="home">
         <div class="container-fluid p-0">
           <div class="video">
             <video autoplay muted loop playsinline>
               <source src="./assets/images/video-banner.mp4" type="video/mp4" />
             </video>
           </div>
-          <div class="intro-banner">
+          <div class="intro-banner container">
             <div class="content">
-              <h1 class="h1-font">Driving Sustainable Growth</h1>
-              <div class="desc b1-bold color-primary">
+              <h1 class="h1-font effect-line" data-delay="0.5">
+                Driving Sustainable Growth
+              </h1>
+              <div
+                class="desc b1-bold color-primary data-fade-in"
+                data-delay="1"
+              >
                 OF GOLF TOURISM AND ECONOMY IN VIETNAM
               </div>
             </div>
@@ -103,6 +108,7 @@
               height="113"
               viewBox="0 0 1440 113"
               fill="none"
+              class="draw_svg"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -115,32 +121,34 @@
           </div>
           <div class="intro-brands container">
             <div class="intro-brands__info">
-              <div class="title text-center font-primary">
+              <div class="title text-center font-primary effect-line">
                 Ministry of culture, sports and tourism<br />
                 <span>People’s committee of Hue City</span>
               </div>
               <div class="list-brands">
-                <div class="item b3-font text-center">
+                <div class="item b3-font text-center data-fade-in">
                   ORGANIZED BY
                   <img src="./assets/images/brand-logo-1.svg" alt="" />
                 </div>
-                <div class="item b3-font text-center">
+                <div class="item b3-font text-center data-fade-in">
                   OMANAGED BY
                   <img src="./assets/images/brand-logo-1.svg" alt="" />
                 </div>
-                <div class="item b3-font text-center">
+                <div class="item b3-font text-center data-fade-in">
                   PRESENTING PARTNER
                   <img src="./assets/images/brand-logo-1.svg" alt="" />
                 </div>
-                <div class="item b3-font text-center">
+                <div class="item b3-font text-center data-fade-in">
                   VENUE PARTNER
                   <img src="./assets/images/brand-logo-1.svg" alt="" />
                 </div>
               </div>
             </div>
             <div class="intro-brands__partners">
-              <div class="title h3-font color-white text-center">PARTNERS</div>
-              <div class="marquee-container">
+              <div class="title h3-font color-white text-center effect-line">
+                PARTNERS
+              </div>
+              <div class="marquee-container data-fade-in">
                 <div class="partner-container marquee-content" data-speed="50">
                   <div class="partner-item marquee-item">
                     <img src="./assets/images/brand-logo-1.svg" alt="" />
@@ -171,14 +179,14 @@
       </section>
       <section class="our-mission">
         <div class="container mission-container">
-          <div class="tag">OUR MISSION</div>
-          <h2 class="title h1-font color-white">
+          <div class="tag data-fade-in">OUR MISSION</div>
+          <h2 class="title h1-font color-white effect-line">
             Elevating Vietnam’s Golf Industry
           </h2>
-          <div class="desc b1-bold color-primary">
+          <div class="desc b1-bold color-primary data-fade-in">
             A FOCUS ON STANDARDS & SUSTAINABILITY
           </div>
-          <ul class="mission-list">
+          <ul class="mission-list data-fade-in">
             <li class="mission-item active">
               <div class="image">
                 <img
@@ -260,16 +268,16 @@
           </ul>
         </div>
       </section>
-      <section class="member">
+      <section class="member" id="key-topics">
         <div class="container">
           <div class="member-container">
             <div class="col-content">
-              <div class="tag">KEY DISCUSSIONS TOPICS</div>
-              <div class="title h1-font color-white">
+              <div class="tag data-fade-in">KEY DISCUSSIONS TOPICS</div>
+              <div class="title h1-font color-white effect-line">
                 Shaping <span>Vietnam Golf Future</span>
               </div>
             </div>
-            <div class="col-personal">
+            <div class="col-personal data-fade-in">
               <div class="swiper personal-swiper">
                 <ul class="swiper-wrapper personal-list">
                   <li class="swiper-slide personal-item">
@@ -355,11 +363,11 @@
       <section class="our-target">
         <div class="container">
           <div class="target-container">
-            <div class="tag">OUR TARGET</div>
-            <div class="title h1-font">
+            <div class="tag data-fade-in">OUR TARGET</div>
+            <div class="title h1-font effect-line">
               Connect - Invest - <span>Shape Future</span>
             </div>
-            <ul class="target-list">
+            <ul class="target-list data-fade-in">
               <li class="target-item">
                 <div class="icon">
                   <img src="./assets/images/draf/icon-target-1.svg" alt="" />
@@ -370,6 +378,9 @@
                   golf course owners in Vietnam to elevate service standards and
                   enhance the competitive position of Vietnam's golf
                   tourism industry in the international market.
+                </div>
+                <div class="image">
+                  <img src="./assets/images/bg-mission-main-left.png" alt="" />
                 </div>
               </li>
               <li class="target-item">
@@ -382,6 +393,9 @@
                   Owners Alliance, fostering cooperation and building long-term
                   strategic relationships within the industry.
                 </div>
+                <div class="image">
+                  <img src="./assets/images/bg-mission-main-right.png" alt="" />
+                </div>
               </li>
               <li class="target-item">
                 <div class="icon">
@@ -392,6 +406,9 @@
                   Champion sustainable development activities as an inseparable
                   core element of the national golf development strategy,
                   ensuring alignment with global trends.
+                </div>
+                <div class="image">
+                  <img src="./assets/images/bg-mission-main-left.png" alt="" />
                 </div>
               </li>
               <li class="target-item">
@@ -404,47 +421,59 @@
                   investment, and promote Vietnam's image as a leading golf
                   destination in the region and worldwide.
                 </div>
+                <div class="image">
+                  <img src="./assets/images/bg-mission-main-right.png" alt="" />
+                </div>
               </li>
             </ul>
           </div>
         </div>
       </section>
-      <section class="participants">
+      <section class="participants" id="participants">
         <div class="container">
           <div class="participants-container">
             <div class="content-top">
-              <div class="tag">OUR PARTICIPANTS</div>
-              <h2 class="title h1-font">Distinguished Guests</h2>
-              <div class="desc b1-bold color-primary">
+              <div class="tag data-fade-in">OUR PARTICIPANTS</div>
+              <h2 class="title h1-font effect-line">Distinguished Guests</h2>
+              <div class="desc b1-bold color-primary data-fade-in">
                 A COLLECTIVE FORCE DRIVING COLLABORATION AND NEW HORIZONS FOR
                 GOLF
               </div>
             </div>
-            <div class="participants-swiper swiper">
+            <div class="participants-swiper swiper data-fade-in">
               <div class="swiper-wrapper participants-list">
                 <div class="swiper-slide participants-item">
-                  <img src="./assets/images/draf/participant-1.png" alt="" />
+                  <div class="image">
+                    <img src="./assets/images/draf/participant-1.png" alt="" />
+                  </div>
                   <div class="item-title h2-font color-primary text-center">
-                    Future Golf Course Developers in Vietnam
+                    Future Golf Course <br />
+                    Developers in Vietnam
                   </div>
                   <a href="#" class="item-cta b3-font">View detail</a>
                 </div>
                 <div class="swiper-slide participants-item">
-                  <img src="./assets/images/draf/participant-1.png" alt="" />
+                  <div class="image">
+                    <img src="./assets/images/draf/participant-1.png" alt="" />
+                  </div>
                   <div class="item-title h2-font color-primary text-center">
                     International Experts
                   </div>
                   <a href="#" class="item-cta b3-font">View detail</a>
                 </div>
                 <div class="swiper-slide participants-item">
-                  <img src="./assets/images/draf/participant-1.png" alt="" />
+                  <div class="image">
+                    <img src="./assets/images/draf/participant-1.png" alt="" />
+                  </div>
                   <div class="item-title h2-font color-primary text-center">
                     Government Officials
                   </div>
                   <a href="#" class="item-cta b3-font">View detail</a>
                 </div>
                 <div class="swiper-slide participants-item">
-                  <img src="./assets/images/draf/participant-1.png" alt="" />
+                  <div class="image">
+                    <img src="./assets/images/draf/participant-1.png" alt="" />
+                  </div>
                   <div class="item-title h2-font color-primary text-center">
                     International Experts
                   </div>
@@ -514,6 +543,8 @@
     <script src="./assets/libs/bootstrap.bundle.min.js"></script>
     <script src="./assets/libs/imagesloaded.pkgd.min.js"></script>
     <script src="./assets/libs/swiper-bundle.min.js"></script>
+    <script src="./assets/libs/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
     <!-- import custom js -->
     <script type="module" src="./assets/main/js/script.min.js"></script>
 

@@ -228,6 +228,143 @@ function footer() {
   });
 }
 
+document.addEventListener("DOMContentLoaded", (event) => {
+  gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
+
+  let svg = document.querySelector(".draw_svg");
+  let path = svg.querySelector("path");
+
+  gsap.set(path, {
+    drawSVG: "0%"
+  });
+
+  gsap.to(path, {
+    drawSVG: "100%",
+    duration: 2,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".intro-line",
+      start: "top 80%",
+      end: "bottom 80%"
+      // markers: true
+    }
+  });
+});
+
+// header
+document.addEventListener("DOMContentLoaded", function () {
+  gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
+
+  // Click scroll + active
+  document.querySelectorAll('#header a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetElement = document.querySelector(this.getAttribute("href"));
+      if (targetElement) {
+        gsap.to(window, {
+          duration: 1,
+          scrollTo: { y: targetElement, offsetY: 200 },
+          ease: "power2.out"
+        });
+      }
+
+      document
+        .querySelectorAll('#headera[href^="#"]')
+        .forEach((a) => a.classList.remove("active"));
+      this.classList.add("active");
+    });
+  });
+
+  document.querySelectorAll("section[id]").forEach((section) => {
+    const link = document.querySelector(`#header a[href="#${section.id}"]`);
+
+    if (link) {
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top 100px",
+        end: "bottom 100px",
+        // markers: true,
+        onEnter: () => {
+          // Remove active từ tất cả links
+          document.querySelectorAll('#header a[href^="#"]').forEach((a) => {
+            a.classList.remove("active");
+          });
+          // Add active cho link tương ứng
+          link.classList.add("active");
+        },
+        onEnterBack: () => {
+          // Khi scroll ngược lại
+          document.querySelectorAll('#header a[href^="#"]').forEach((a) => {
+            a.classList.remove("active");
+          });
+          link.classList.add("active");
+        }
+      });
+    }
+  });
+
+  ScrollTrigger.refresh();
+});
+
+function effectText() {
+  gsap.registerPlugin(ScrollTrigger, SplitText);
+  gsap.utils.toArray(".data-fade-in").forEach((element) => {
+    const delay = parseFloat(element.dataset.delay) || 0;
+
+    gsap.fromTo(
+      element,
+      {
+        "will-change": "opacity, transform",
+        opacity: 0,
+        y: 20
+      },
+      {
+        scrollTrigger: {
+          trigger: element,
+          start: "top 80%",
+          end: "bottom 80%"
+        },
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: "sine.out",
+        delay: delay
+      }
+    );
+  });
+
+  gsap.utils.toArray(".effect-line").forEach((description) => {
+    const splitDescription = new SplitText(description, {
+      type: "lines",
+      linesClass: "line",
+      mask: "lines"
+    });
+
+    const delay = parseFloat(description.dataset.delay) || 0;
+
+    gsap.fromTo(
+      splitDescription.lines,
+      {
+        yPercent: 100,
+        willChange: "transform"
+      },
+      {
+        yPercent: 0,
+        duration: 1,
+        ease: "power3.out",
+        stagger: 0.05,
+        delay: delay,
+
+        scrollTrigger: {
+          trigger: description,
+          start: "top 80%"
+          // markers: true,
+        }
+      }
+    );
+  });
+}
+
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   marquee();
@@ -236,6 +373,7 @@ const init = () => {
   personalSwiper();
   participantsSwiper();
   footer();
+  effectText();
 };
 
 preloadImages("img").then(() => {
