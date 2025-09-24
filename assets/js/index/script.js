@@ -211,6 +211,23 @@ function participantsSwiper() {
   }
 }
 
+function footer() {
+  if ($(".footer").length < 1) return;
+
+  const footerAgendaCTA = $(".footer-agenda .content-item .cta");
+  footerAgendaCTA.on("click", function () {
+    const thisItem = $(this);
+    const parentItem = thisItem.closest(".content-item");
+    const index = parentItem.index();
+
+    $(".footer-agenda .content-item, .agenda-main__image ellipse").removeClass(
+      "active"
+    );
+    parentItem.addClass("active");
+    $(`.agenda-main__image ellipse.shadow-${index + 1}`).addClass("active");
+  });
+}
+
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   marquee();
@@ -218,6 +235,7 @@ const init = () => {
   customDropdown();
   personalSwiper();
   participantsSwiper();
+  footer();
 };
 
 preloadImages("img").then(() => {

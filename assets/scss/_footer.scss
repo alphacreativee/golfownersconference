@@ -23,8 +23,147 @@
   &-agenda {
     position: relative;
     z-index: 2;
-    min-height: 600px;
+    min-height: 800px;
     padding-top: 30px;
+
+    .agenda-main {
+      position: relative;
+
+      &__image {
+        height: 460px;
+
+        svg {
+          width: 100%;
+          object-fit: cover;
+          object-position: left bottom;
+
+          ellipse {
+            opacity: 0;
+            transition: all 0.4s ease;
+
+            &.active {
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      &__content {
+        .content-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 8px;
+          width: max-content;
+          max-width: 170px;
+          text-align: center;
+
+          position: absolute;
+          top: 100%;
+          transform: translateY(-100px);
+          left: 17%;
+
+          &:nth-child(2) {
+            left: 50%;
+            transform: translateX(-50%) translateY(-100px);
+          }
+
+          &:nth-child(3) {
+            left: unset;
+            right: 20%;
+            transform: translateY(-200px);
+          }
+
+          .name {
+            span {
+              color: var(--color-primary);
+            }
+          }
+
+          .cta {
+            cursor: pointer;
+            opacity: 0.4;
+            transition: all 0.4s ease;
+
+            &:hover {
+              opacity: 1;
+            }
+          }
+
+          &.active {
+            .cta {
+              opacity: 1;
+            }
+
+            .box {
+              transform: none;
+              visibility: visible;
+              opacity: 1;
+            }
+          }
+
+          .box {
+            padding: 24px 0 24px 24px;
+            border-radius: 16px;
+            overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            width: 370px;
+            height: max-content;
+            margin-top: 48px;
+
+            transition: all 0.4s ease;
+            transform: translateY(20px);
+            opacity: 0;
+            visibility: hidden;
+
+            &-wrapper {
+              max-height: 160px;
+              overflow-y: scroll;
+              padding-right: 24px;
+              text-align: left;
+              font-size: 13px;
+              line-height: 20px;
+              margin-right: 3px;
+
+              &::-webkit-scrollbar {
+                width: 3px;
+                border-radius: 16px;
+              }
+
+              &::-webkit-scrollbar-track {
+                background: transparent;
+              }
+
+              &::-webkit-scrollbar-thumb {
+                background: var(--color-primary);
+                border-radius: 16px;
+              }
+
+              li {
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: 16px;
+
+                &:not(:last-child) {
+                  margin-bottom: 12px;
+                }
+
+                .time {
+                  min-width: 100px;
+                }
+
+                .name {
+                  display: flex;
+                  flex-direction: column;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
   &-main {

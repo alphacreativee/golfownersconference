@@ -1,11 +1,35 @@
 @font-face {
-    font-family: 'Neue Plak Text';
-    src: url('NeuePlakText-Black.eot');
-    src: url('NeuePlakText-Black.eot?#iefix') format('embedded-opentype'),
-        url('NeuePlakText-Black.woff2') format('woff2'),
-        url('NeuePlakText-Black.woff') format('woff'),
-        url('NeuePlakText-Black.ttf') format('truetype');
+    font-family: 'Neue Plak Condensed';
+    src: url('NeuePlak-CondBlack.woff2') format('woff2'),
+        url('NeuePlak-CondBlack.woff') format('woff');
     font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Neue Plak Condensed';
+    src: url('NeuePlak-CondBold.woff2') format('woff2'),
+        url('NeuePlak-CondBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Neue Plak Condensed Extra';
+    src: url('NeuePlak-CondExtraBlack.woff2') format('woff2'),
+        url('NeuePlak-CondExtraBlack.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Neue Plak Condensed';
+    src: url('NeuePlak-CondSemiBold.woff2') format('woff2'),
+        url('NeuePlak-CondSemiBold.woff') format('woff');
+    font-weight: 600;
     font-style: normal;
     font-display: swap;
 }
