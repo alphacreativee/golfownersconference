@@ -527,6 +527,12 @@ body {
   width: 30px;
   height: 30px;
 }
+.footer-main .social li {
+  transition: all 0.4s ease;
+}
+.footer-main .social li:hover {
+  transform: translateY(-5px);
+}
 .footer-main__wrapper {
   display: flex;
   align-items: flex-end;

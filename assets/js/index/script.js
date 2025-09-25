@@ -14,8 +14,6 @@ gsap.ticker.lagSmoothing(0);
 function customDropdown() {
   const dropdowns = document.querySelectorAll(".dropdown-custom");
 
-  console.log(dropdowns);
-
   dropdowns.forEach((dropdown) => {
     const btnDropdown = dropdown.querySelector(".dropdown-custom-btn");
     const dropdownMenu = dropdown.querySelector(".dropdown-custom-menu");
@@ -363,6 +361,37 @@ function effectText() {
       }
     );
   });
+
+  gsap.utils.toArray(".effect-line-footer").forEach((description) => {
+    const splitDescription = new SplitText(description, {
+      type: "lines",
+      linesClass: "line",
+      mask: "lines"
+    });
+
+    const delay = parseFloat(description.dataset.delay) || 0;
+
+    gsap.fromTo(
+      splitDescription.lines,
+      {
+        yPercent: 100,
+        willChange: "transform"
+      },
+      {
+        yPercent: 0,
+        duration: 1,
+        ease: "power3.out",
+        stagger: 0.05,
+        delay: delay,
+
+        scrollTrigger: {
+          trigger: ".footer-main",
+          start: "top 75%"
+          // markers: true
+        }
+      }
+    );
+  });
 }
 
 const init = () => {
@@ -388,7 +417,6 @@ $("a").on("click", function (e) {
   // Nếu liên kết dẫn đến trang khác (không phải hash link hoặc javascript void)
   if (this.href && !this.href.match(/^#/) && !this.href.match(/^javascript:/)) {
     isLinkClicked = true;
-    console.log("1");
   }
 });
 
