@@ -145,7 +145,7 @@ function sectionOurMission() {
 
   const missionItems = $(".our-mission .mission-item");
 
-  missionItems.on("mouseenter", function () {
+  missionItems.on("click", function () {
     missionItems.removeClass("active");
     $(this).addClass("active");
   });
