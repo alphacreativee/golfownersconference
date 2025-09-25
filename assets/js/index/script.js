@@ -263,13 +263,13 @@ document.addEventListener("DOMContentLoaded", function () {
       if (targetElement) {
         gsap.to(window, {
           duration: 1,
-          scrollTo: { y: targetElement, offsetY: 200 },
+          scrollTo: { y: targetElement, offsetY: 100 },
           ease: "power2.out"
         });
       }
 
       document
-        .querySelectorAll('#headera[href^="#"]')
+        .querySelectorAll('#header a[href^="#"]')
         .forEach((a) => a.classList.remove("active"));
       this.classList.add("active");
     });

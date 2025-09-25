@@ -1,3 +1,8 @@
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
 .dropdown-custom {
   position: relative;
   cursor: pointer;
@@ -91,6 +96,7 @@
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
+  justify-content: space-between;
   gap: 40px;
 
   .swiper-pagination {
