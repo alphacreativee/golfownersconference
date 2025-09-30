@@ -94,7 +94,9 @@
       align-items: flex-end;
       justify-content: center;
       gap: 24px;
-
+      @media (max-width: 991px) {
+        flex-wrap: wrap;
+      }
       .item {
         width: 149px;
         display: flex;

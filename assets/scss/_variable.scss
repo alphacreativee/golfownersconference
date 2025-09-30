@@ -28,6 +28,10 @@ body {
   line-height: 80px;
   font-weight: 700;
   font-family: var(--font-heading);
+  @media (max-width: 991px) {
+    font-size: 46px;
+    line-height: 1.2;
+  }
 }
 
 .h2-font {

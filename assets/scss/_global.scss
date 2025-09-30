@@ -111,6 +111,9 @@
     border-radius: 4px;
     padding: 3px;
     width: calc(100% - 106px);
+    @media (max-width: 991px) {
+      width: 100%;
+    }
 
     .swiper-pagination-progressbar-fill {
       background-color: var(--color-primary);
@@ -126,6 +129,9 @@
     display: flex;
     align-items: center;
     gap: 12px;
+    @media (max-width: 991px) {
+      display: none;
+    }
   }
 
   .swiper-button-next,
