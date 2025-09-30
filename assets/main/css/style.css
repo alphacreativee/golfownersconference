@@ -750,6 +750,16 @@ body {
   left: 12px;
   transform: translateY(-50%);
 }
+@media (max-width: 991px) {
+  .intro-banner .content {
+    left: 20px;
+    right: 20px;
+    width: calc(100% - 40px);
+  }
+  .intro-banner .content .desc {
+    max-width: 70%;
+  }
+}
 .intro-line {
   height: 110px;
   position: relative;

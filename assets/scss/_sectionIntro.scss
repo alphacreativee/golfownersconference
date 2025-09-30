@@ -58,6 +58,14 @@
       top: 50%;
       left: 12px;
       transform: translateY(-50%);
+      @media (max-width: 991px) {
+        left: 20px;
+        right: 20px;
+        width: calc(100% - 40px);
+        .desc {
+          max-width: 70%;
+        }
+      }
     }
   }
 
