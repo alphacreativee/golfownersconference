@@ -755,6 +755,11 @@ body {
   position: relative;
   z-index: 2;
 }
+@media (max-width: 991px) {
+  .intro-line {
+    height: 30px;
+  }
+}
 .intro-line svg {
   width: 100%;
   height: auto;
@@ -763,6 +768,11 @@ body {
   position: relative;
   z-index: 2;
   margin-top: 100px;
+}
+@media (max-width: 991px) {
+  .intro-brands {
+    margin-top: 64px;
+  }
 }
 .intro-brands .title {
   font-size: 24px;
@@ -1143,7 +1153,7 @@ body {
 @media (max-width: 991px) {
   .our-target .target-list {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 32px;
   }
 }
 .our-target .target-list .target-item {

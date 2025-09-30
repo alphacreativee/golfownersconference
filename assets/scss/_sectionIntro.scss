@@ -65,7 +65,9 @@
     height: 110px;
     position: relative;
     z-index: 2;
-
+    @media (max-width: 991px) {
+      height: 30px;
+    }
     svg {
       width: 100%;
       height: auto;
@@ -76,7 +78,9 @@
     position: relative;
     z-index: 2;
     margin-top: 100px;
-
+    @media (max-width: 991px) {
+      margin-top: 64px;
+    }
     .title {
       font-size: 24px;
       line-height: 28px;
