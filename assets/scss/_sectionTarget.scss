@@ -31,7 +31,10 @@
     position: relative;
     z-index: 2;
     padding: 100px 0 600px;
-
+    @media (max-width: 991px) {
+      padding-top: 64px;
+      padding-bottom: 0;
+    }
     .title {
       margin-top: 16px;
 

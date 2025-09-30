@@ -4,7 +4,9 @@
   background-size: cover;
   padding: 128px 0 40px;
   position: relative;
-
+  @media (max-width: 991px) {
+    padding-top: 64px;
+  }
   &::after {
     content: "";
     position: absolute;

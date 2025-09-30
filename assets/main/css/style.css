@@ -845,6 +845,11 @@ body {
   padding: 128px 0 40px;
   position: relative;
 }
+@media (max-width: 991px) {
+  .our-mission {
+    padding-top: 64px;
+  }
+}
 .our-mission::after {
   content: "";
   position: absolute;
@@ -1083,6 +1088,8 @@ body {
   .member-container {
     display: flex;
     flex-direction: column;
+    padding-top: 64px;
+    padding-bottom: 0;
   }
 }
 
@@ -1114,6 +1121,12 @@ body {
   position: relative;
   z-index: 2;
   padding: 100px 0 600px;
+}
+@media (max-width: 991px) {
+  .our-target .target-container {
+    padding-top: 64px;
+    padding-bottom: 0;
+  }
 }
 .our-target .target-container .title {
   margin-top: 16px;
@@ -1208,6 +1221,11 @@ body {
   position: relative;
   z-index: 2;
   padding: 100px 0 60px;
+}
+@media (max-width: 991px) {
+  .participants-container {
+    padding-top: 64px;
+  }
 }
 .participants-swiper {
   margin-top: 48px;
