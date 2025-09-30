@@ -394,6 +394,21 @@ function effectText() {
   });
 }
 
+function header() {
+  if ($("#header").length < 1) return;
+
+  $(".header-hamburger, .header-menu__overlay").on("click", function () {
+    $(this).toggleClass("active");
+    $("#header .menu, #header .header-menu__overlay").toggleClass("open");
+
+    if ($(".header-hamburger").hasClass("active")) {
+      lenis.stop();
+    } else {
+      lenis.start();
+    }
+  });
+}
+
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   marquee();
@@ -401,6 +416,7 @@ const init = () => {
   customDropdown();
   personalSwiper();
   participantsSwiper();
+  header();
   footer();
   effectText();
 };
