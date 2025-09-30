@@ -439,7 +439,7 @@ body {
 }
 @media (max-width: 991px) {
   #header .header-hamburger {
-    right: 15px;
+    right: 8px;
   }
 }
 #header .header-hamburger::before {
