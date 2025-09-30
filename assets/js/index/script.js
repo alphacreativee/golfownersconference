@@ -116,7 +116,7 @@ function marquee() {
     gsap.set(content, {
       x: 0,
       willChange: "transform",
-      force3D: true
+      force3D: true,
     });
 
     const tl = gsap.timeline({ repeat: -1 });
@@ -125,8 +125,8 @@ function marquee() {
       duration: fullWidth / speed,
       ease: "none",
       modifiers: {
-        x: (x) => `${parseFloat(x) % fullWidth}px`
-      }
+        x: (x) => `${parseFloat(x) % fullWidth}px`,
+      },
     });
 
     // Hover pause
@@ -158,23 +158,23 @@ function personalSwiper() {
       speed: 600,
       pagination: {
         el: ".personal-swiper .swiper-pagination",
-        type: "progressbar"
+        type: "progressbar",
       },
       navigation: {
         nextEl: ".personal-swiper .swiper-button-next",
-        prevEl: ".personal-swiper .swiper-button-prev"
+        prevEl: ".personal-swiper .swiper-button-prev",
       },
       breakpoints: {
         0: {
-          slidesPerView: 1
+          slidesPerView: 1,
         },
         768: {
-          slidesPerView: 2
+          slidesPerView: 2,
         },
         1024: {
-          slidesPerView: 2.5
-        }
-      }
+          slidesPerView: 2.5,
+        },
+      },
     });
   }
 }
@@ -188,23 +188,23 @@ function participantsSwiper() {
       speed: 600,
       pagination: {
         el: ".participants-swiper .swiper-pagination",
-        type: "progressbar"
+        type: "progressbar",
       },
       navigation: {
         nextEl: ".participants-swiper .swiper-button-next",
-        prevEl: ".participants-swiper .swiper-button-prev"
+        prevEl: ".participants-swiper .swiper-button-prev",
       },
       breakpoints: {
         0: {
-          slidesPerView: 2
+          slidesPerView: 1,
         },
         768: {
-          slidesPerView: 2
+          slidesPerView: 2,
         },
         1024: {
-          slidesPerView: 3
-        }
-      }
+          slidesPerView: 3,
+        },
+      },
     });
   }
 }
@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   let path = svg.querySelector("path");
 
   gsap.set(path, {
-    drawSVG: "0%"
+    drawSVG: "0%",
   });
 
   gsap.to(path, {
@@ -243,9 +243,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     scrollTrigger: {
       trigger: ".intro-line",
       start: "top 80%",
-      end: "bottom 80%"
+      end: "bottom 80%",
       // markers: true
-    }
+    },
   });
 });
 
@@ -262,7 +262,7 @@ document.addEventListener("DOMContentLoaded", function () {
         gsap.to(window, {
           duration: 1,
           scrollTo: { y: targetElement, offsetY: 100 },
-          ease: "power2.out"
+          ease: "power2.out",
         });
       }
 
@@ -296,7 +296,7 @@ document.addEventListener("DOMContentLoaded", function () {
             a.classList.remove("active");
           });
           link.classList.add("active");
-        }
+        },
       });
     }
   });
@@ -314,19 +314,19 @@ function effectText() {
       {
         "will-change": "opacity, transform",
         opacity: 0,
-        y: 20
+        y: 20,
       },
       {
         scrollTrigger: {
           trigger: element,
           start: "top 80%",
-          end: "bottom 80%"
+          end: "bottom 80%",
         },
         opacity: 1,
         y: 0,
         duration: 0.5,
         ease: "sine.out",
-        delay: delay
+        delay: delay,
       }
     );
   });
@@ -335,7 +335,7 @@ function effectText() {
     const splitDescription = new SplitText(description, {
       type: "lines",
       linesClass: "line",
-      mask: "lines"
+      mask: "lines",
     });
 
     const delay = parseFloat(description.dataset.delay) || 0;
@@ -344,7 +344,7 @@ function effectText() {
       splitDescription.lines,
       {
         yPercent: 100,
-        willChange: "transform"
+        willChange: "transform",
       },
       {
         yPercent: 0,
@@ -355,9 +355,9 @@ function effectText() {
 
         scrollTrigger: {
           trigger: description,
-          start: "top 80%"
+          start: "top 80%",
           // markers: true,
-        }
+        },
       }
     );
   });
@@ -366,7 +366,7 @@ function effectText() {
     const splitDescription = new SplitText(description, {
       type: "lines",
       linesClass: "line",
-      mask: "lines"
+      mask: "lines",
     });
 
     const delay = parseFloat(description.dataset.delay) || 0;
@@ -375,7 +375,7 @@ function effectText() {
       splitDescription.lines,
       {
         yPercent: 100,
-        willChange: "transform"
+        willChange: "transform",
       },
       {
         yPercent: 0,
@@ -386,9 +386,9 @@ function effectText() {
 
         scrollTrigger: {
           trigger: ".footer-main",
-          start: "top 75%"
+          start: "top 75%",
           // markers: true
-        }
+        },
       }
     );
   });
