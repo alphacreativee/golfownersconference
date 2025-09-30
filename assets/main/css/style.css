@@ -1014,6 +1014,13 @@ body {
   background-size: cover;
   position: relative;
 }
+@media (max-width: 991px) {
+  .our-target .container {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 .our-target::after {
   content: "";
   position: absolute;
@@ -1040,6 +1047,12 @@ body {
   grid-template-columns: repeat(4, 1fr);
   margin-top: 48px;
   gap: 24px;
+}
+@media (max-width: 991px) {
+  .our-target .target-list {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
 }
 .our-target .target-list .target-item {
   border-radius: 16px;
