@@ -988,6 +988,7 @@ body {
     opacity: 1;
     visibility: visible;
     transform: translate(0, -50%);
+    left: 24px;
   }
 }
 .our-mission .mission-list .mission-item .item-content .title {
