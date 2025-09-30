@@ -114,7 +114,9 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-
+        @media (max-width: 991px) {
+          width: calc(calc(100% / 2) - 24px);
+        }
         img {
           width: 100%;
           height: 112px;
