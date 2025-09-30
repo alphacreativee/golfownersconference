@@ -170,6 +170,16 @@
     position: relative;
     z-index: 2;
     padding: 160px 0 80px;
+    @media (max-width: 991px) {
+      padding-bottom: 48px;
+      padding-top: 100px;
+      .container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
 
     .social {
       display: flex;
@@ -195,6 +205,11 @@
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
+      @media (max-width: 767px) {
+        flex-direction: column;
+        gap: 48px;
+        align-items: flex-start;
+      }
     }
 
     .logo {
@@ -206,7 +221,9 @@
 
   &-right {
     text-align: right;
-
+    @media (max-width: 767px) {
+      text-align: left;
+    }
     span {
       color: var(--color-primary);
     }
