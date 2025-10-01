@@ -4,7 +4,9 @@
   background-size: cover;
   padding: 128px 0 40px;
   position: relative;
-
+  @media (max-width: 991px) {
+    padding-top: 64px;
+  }
   &::after {
     content: "";
     position: absolute;
@@ -26,6 +28,10 @@
   .mission-container {
     position: relative;
     z-index: 2;
+    @media (max-width: 991px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
   }
 
   .tag {
@@ -36,7 +42,9 @@
     margin-top: 48px;
     display: flex;
     gap: 16px;
-
+    @media (max-width: 991px) {
+      flex-wrap: wrap;
+    }
     .mission-item {
       cursor: pointer;
       border-radius: 16px;
@@ -46,11 +54,16 @@
       position: relative;
       transition: all 0.6s ease;
       width: calc(calc(50% / 3) - 32px);
-
+      @media (max-width: 991px) {
+        width: 100% !important;
+        flex: unset;
+      }
       &.active {
         width: 50%;
         flex: 3;
-
+        @media (max-width: 991px) {
+          width: 100% !important;
+        }
         .image {
           img {
             opacity: 0;
@@ -94,6 +107,9 @@
           line-height: 32px;
           font-weight: 900;
           font-family: var(--font-heading);
+          @media (max-width: 991px) {
+            display: none;
+          }
         }
 
         &-content {
@@ -105,7 +121,12 @@
           opacity: 0;
           visibility: hidden;
           transition-delay: 0;
-
+          @media (max-width: 991px) {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(0, -50%);
+            left: 24px;
+          }
           .title {
             font-size: 28px;
             line-height: 32px;
@@ -134,11 +155,19 @@
         top: 0;
         left: 0;
         transition: all 0.5s ease;
+        @media (max-width: 991px) {
+          opacity: 0;
+          visibility: hidden;
+        }
       }
 
       .image-active {
         opacity: 0;
         visibility: hidden;
+        @media (max-width: 991px) {
+          opacity: 1;
+          visibility: visible;
+        }
       }
     }
   }

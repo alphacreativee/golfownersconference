@@ -4,7 +4,13 @@
   background-position: center bottom;
   background-size: cover;
   position: relative;
-
+  @media (max-width: 991px) {
+    .container {
+      max-width: 100%;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
   &::after {
     content: "";
     position: absolute;
@@ -25,7 +31,10 @@
     position: relative;
     z-index: 2;
     padding: 100px 0 600px;
-
+    @media (max-width: 991px) {
+      padding-top: 64px;
+      padding-bottom: 0;
+    }
     .title {
       margin-top: 16px;
 
@@ -40,7 +49,10 @@
     grid-template-columns: repeat(4, 1fr);
     margin-top: 48px;
     gap: 24px;
-
+    @media (max-width: 991px) {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
     .target-item {
       border-radius: 16px;
       overflow: hidden;

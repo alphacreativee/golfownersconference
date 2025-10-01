@@ -140,7 +140,7 @@ function marquee() {
 
 function sectionOurMission() {
   if ($(".our-mission").length < 1) return;
-
+  if ($(window).width() < 991) return;
   const missionItems = $(".our-mission .mission-item");
 
   missionItems.on("click", function () {
