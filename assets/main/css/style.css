@@ -11,6 +11,17 @@ body {
   color: var(--color-white);
 }
 
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1060px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1060px;
+  }
+}
+
 .font-heading {
   font-family: var(--font-heading);
 }
@@ -235,7 +246,7 @@ body {
 }
 
 .swiper-control {
-  margin-top: 50px;
+  margin-top: 40px;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -579,7 +590,7 @@ body {
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  width: 370px;
+  width: 450px;
   height: max-content;
   margin-top: 48px;
   transition: all 0.4s ease;
@@ -594,6 +605,7 @@ body {
   text-align: left;
   font-size: 13px;
   line-height: 20px;
+  font-weight: 700;
   margin-right: 3px;
 }
 .footer-agenda .agenda-main__content .content-item .box-wrapper::-webkit-scrollbar {
@@ -618,10 +630,17 @@ body {
 }
 .footer-agenda .agenda-main__content .content-item .box-wrapper li .time {
   min-width: 100px;
+  color: var(--color-primary);
 }
 .footer-agenda .agenda-main__content .content-item .box-wrapper li .name {
   display: flex;
   flex-direction: column;
+}
+.footer-agenda .agenda-main__content .content-item .box-wrapper li .name span {
+  font-size: 11px;
+  line-height: 14px;
+  font-weight: 400;
+  font-style: italic;
 }
 .footer-main {
   position: relative;
@@ -945,7 +964,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgb(3, 6, 5) 0%, rgba(3, 6, 5, 0.5) 45%, rgba(3, 6, 5, 0.5) 55%, rgb(3, 6, 5) 100%);
+  background: linear-gradient(to bottom, #030605 0, rgba(3, 6, 5, 0) 45%, rgba(3, 6, 5, 0) 90%, #030605 100%);
   z-index: 1;
 }
 .member .col-content {
@@ -1181,7 +1200,7 @@ body {
 }
 .participants .swiper-control {
   width: 450px;
-  margin: 80px auto 0;
+  margin: 40px auto 0;
 }
 @media (max-width: 991px) {
   .participants .swiper-control {
