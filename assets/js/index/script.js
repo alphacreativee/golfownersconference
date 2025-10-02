@@ -143,7 +143,7 @@ function sectionOurMission() {
   if ($(window).width() < 991) return;
   const missionItems = $(".our-mission .mission-item");
 
-  missionItems.on("click", function () {
+  missionItems.on("mouseenter", function () {
     missionItems.removeClass("active");
     $(this).addClass("active");
   });

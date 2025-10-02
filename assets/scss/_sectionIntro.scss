@@ -123,6 +123,13 @@
         @media (max-width: 991px) {
           width: calc(calc(100% / 2) - 24px);
         }
+
+        a {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+
         img {
           width: 100%;
           height: 112px;
