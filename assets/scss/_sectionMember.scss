@@ -4,7 +4,7 @@
   @media (max-width: 991px) {
     .container {
       padding-left: 20px;
-      padding-right: 20px;
+      padding-right: 0;
     }
   }
   &::after {
@@ -28,6 +28,7 @@
   .col-content {
     padding-right: 40px;
     .title {
+      margin-top: 16px;
       span {
         color: var(--color-primary);
       }
@@ -109,6 +110,12 @@
       flex-direction: column;
       padding-top: 64px;
       padding-bottom: 0;
+    }
+  }
+
+  .swiper-control {
+    @media (max-width: 991px) {
+      padding-right: 20px;
     }
   }
 }

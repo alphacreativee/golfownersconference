@@ -32,6 +32,13 @@
       padding-left: 20px;
       padding-right: 20px;
     }
+
+    .desc {
+      margin-top: 16px;
+      @media (max-width: 991px) {
+        margin-top: 12px;
+      }
+    }
   }
 
   .tag {

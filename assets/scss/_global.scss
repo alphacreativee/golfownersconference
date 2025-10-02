@@ -68,6 +68,10 @@
     gap: 24px;
     display: flex;
     flex-wrap: nowrap;
+
+    @media (max-width: 991px) {
+      gap: 8px;
+    }
   }
 }
 
@@ -99,6 +103,11 @@
   justify-content: space-between;
   gap: 40px;
 
+  @media (max-width: 991px) {
+    margin-top: 32px;
+    gap: 24px;
+  }
+
   .swiper-pagination {
     position: relative;
     transform: none;
@@ -111,8 +120,9 @@
     border-radius: 4px;
     padding: 3px;
     width: calc(100% - 106px);
+
     @media (max-width: 991px) {
-      width: 100%;
+      width: calc(100% - 90px);
     }
 
     .swiper-pagination-progressbar-fill {
@@ -129,9 +139,6 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    @media (max-width: 991px) {
-      display: none;
-    }
   }
 
   .swiper-button-next,

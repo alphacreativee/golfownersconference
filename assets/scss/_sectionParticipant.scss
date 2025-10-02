@@ -33,6 +33,12 @@
     @media (max-width: 991px) {
       padding-top: 64px;
     }
+
+    .desc {
+      @media (max-width: 991px) {
+        margin-top: 12px;
+      }
+    }
   }
 
   &-swiper {
@@ -107,13 +113,22 @@
       width: max-content;
       margin: 0 auto 16px;
     }
+
+    .desc {
+      margin-top: 16px;
+
+      @media (max-width: 991px) {
+        margin-top: 12px;
+      }
+    }
   }
 
   .swiper-control {
     width: 450px;
     margin: 40px auto 0;
     @media (max-width: 991px) {
-      margin-top: 48px;
+      margin-top: 32px;
+      width: auto;
     }
   }
 }

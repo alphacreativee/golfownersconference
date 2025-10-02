@@ -24,22 +24,56 @@
     z-index: 1;
   }
 
+  h2.title {
+    margin-top: 30px;
+  }
+
   &-agenda {
     position: relative;
     z-index: 2;
     min-height: 800px;
-    padding-top: 30px;
+
+    @media (max-width: 991px) {
+      overflow-x: scroll;
+      overflow-y: hidden;
+      min-height: 730px;
+    }
+
+    &::-webkit-scrollbar {
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--color-primary);
+      height: 1px;
+    }
 
     .agenda-main {
       position: relative;
 
+      @media (max-width: 991px) {
+        width: 800px;
+      }
+
       &__image {
         height: 460px;
+
+        @media (max-width: 991px) {
+          height: 350px;
+        }
 
         svg {
           width: 100%;
           object-fit: cover;
           object-position: left bottom;
+
+          @media (max-width: 991px) {
+            width: 800px;
+            max-height: 280px;
+            aspect-ratio: 1024 / 350;
+            object-position: left top;
+          }
 
           ellipse {
             opacity: 0;
@@ -67,6 +101,10 @@
           transform: translateY(-100px);
           left: 17%;
 
+          @media (max-width: 991px) {
+            left: 12%;
+          }
+
           &:nth-child(2) {
             left: 50%;
             transform: translateX(-50%) translateY(-100px);
@@ -76,6 +114,11 @@
             left: unset;
             right: 20%;
             transform: translateY(-200px);
+
+            @media (max-width: 991px) {
+              right: 7%;
+              transform: translateY(-150px);
+            }
           }
 
           .name {
@@ -120,6 +163,10 @@
             transform: translateY(20px);
             opacity: 0;
             visibility: hidden;
+
+            @media (max-width: 991px) {
+              width: 350px;
+            }
 
             &-wrapper {
               max-height: 160px;

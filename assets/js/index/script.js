@@ -166,7 +166,8 @@ function personalSwiper() {
       },
       breakpoints: {
         0: {
-          slidesPerView: 1
+          slidesPerView: 1.3,
+          slidesOffsetAfter: 16
         },
         768: {
           slidesPerView: 2
@@ -409,6 +410,41 @@ function header() {
   });
 }
 
+let swiperInstance = null;
+function sectionTarget() {
+  if ($(".our-target").length < 1) return;
+
+  if (window.innerWidth <= 1024 && !swiperInstance) {
+    swiperInstance = new Swiper(".target-swiper", {
+      spaceBetween: 16,
+      loop: false,
+      speed: 600,
+      pagination: {
+        el: ".target-swiper .swiper-pagination",
+        type: "progressbar"
+      },
+      navigation: {
+        nextEl: ".target-swiper .swiper-button-next",
+        prevEl: ".target-swiper .swiper-button-prev"
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1
+        },
+        768: {
+          slidesPerView: 2
+        },
+        992: {
+          slidesPerView: 3
+        }
+      }
+    });
+  } else if (window.innerWidth > 1024 && swiperInstance) {
+    swiperInstance.destroy(true, true);
+    swiperInstance = null;
+  }
+}
+
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   marquee();
@@ -416,6 +452,7 @@ const init = () => {
   customDropdown();
   personalSwiper();
   participantsSwiper();
+  sectionTarget();
   header();
   footer();
   effectText();

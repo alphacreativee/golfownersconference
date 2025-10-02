@@ -62,8 +62,14 @@
         left: 20px;
         right: 20px;
         width: calc(100% - 40px);
-        .desc {
-          max-width: 70%;
+      }
+
+      .desc {
+        margin-top: 12px;
+
+        @media (max-width: 991px) {
+          max-width: 80%;
+          margin-top: 12px;
         }
       }
     }
