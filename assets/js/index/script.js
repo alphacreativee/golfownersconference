@@ -322,6 +322,7 @@ function effectText() {
           trigger: element,
           start: "top 80%",
           end: "bottom 80%"
+          // markers: true
         },
         opacity: 1,
         y: 0,
@@ -357,7 +358,7 @@ function effectText() {
         scrollTrigger: {
           trigger: description,
           start: "top 80%"
-          // markers: true,
+          // markers: true
         }
       }
     );
@@ -387,7 +388,7 @@ function effectText() {
 
         scrollTrigger: {
           trigger: ".footer-main",
-          start: "top 75%"
+          start: "top 70%"
           // markers: true
         }
       }

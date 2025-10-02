@@ -1,6 +1,6 @@
 .footer {
   background-image: url("../../images/bg-footer.webp");
-  background-position: bottom center;
+  background-position: bottom right;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
@@ -26,13 +26,17 @@
   }
 
   h2.title {
-    margin-top: 30px;
+    margin-bottom: -30px;
+    position: relative;
+    z-index: 2;
   }
 
   &-agenda {
     position: relative;
     z-index: 2;
-    min-height: 800px;
+    height: 720px;
+    min-height: 720px;
+    margin-top: 0;
 
     @media (max-width: 991px) {
       overflow-x: scroll;
@@ -110,6 +114,10 @@
           &:nth-child(2) {
             left: 50%;
             transform: translateX(-50%) translateY(-100px);
+
+            @media (max-width: 991px) {
+              left: 52%;
+            }
           }
 
           &:nth-child(3) {

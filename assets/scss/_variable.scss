@@ -49,6 +49,11 @@ body {
   line-height: 28px;
   font-weight: 900;
   font-family: var(--font-heading);
+
+  @media (max-width: 991px) {
+    font-size: 22px;
+    line-height: 24px;
+  }
 }
 
 .b1-bold {
