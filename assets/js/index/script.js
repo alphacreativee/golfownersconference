@@ -227,26 +227,29 @@ function footer() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", (event) => {
+document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
 
-  let svg = document.querySelector(".draw_svg");
-  let path = svg.querySelector("path");
+  let svgs = document.querySelectorAll(".draw_svg");
 
-  gsap.set(path, {
-    drawSVG: "0%"
-  });
+  svgs.forEach((svg) => {
+    let paths = svg.querySelectorAll("path");
 
-  gsap.to(path, {
-    drawSVG: "100%",
-    duration: 2,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".intro-line",
-      start: "top 80%",
-      end: "bottom 80%"
-      // markers: true
-    }
+    paths.forEach((path) => {
+      gsap.set(path, { drawSVG: "0%" });
+
+      gsap.to(path, {
+        drawSVG: "100%",
+        duration: 2,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".intro-line",
+          start: "top 80%",
+          end: "bottom 80%"
+          // markers: true
+        }
+      });
+    });
   });
 });
 

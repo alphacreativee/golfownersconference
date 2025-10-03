@@ -29,6 +29,10 @@
     margin-bottom: -30px;
     position: relative;
     z-index: 2;
+
+    @media (min-width: 1024px) {
+      margin-bottom: -80px;
+    }
   }
 
   &-agenda {
