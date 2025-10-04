@@ -254,8 +254,13 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // header
+const headerHeight = document.querySelector("#header").offsetHeight;
+
 document.addEventListener("DOMContentLoaded", function () {
   gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
+
+  const header = document.querySelector("#header");
+  const headerHeight = header.offsetHeight;
 
   // Click scroll + active
   document.querySelectorAll('#header a[href^="#"]').forEach((link) => {
@@ -265,40 +270,38 @@ document.addEventListener("DOMContentLoaded", function () {
       if (targetElement) {
         gsap.to(window, {
           duration: 1,
-          scrollTo: { y: targetElement, offsetY: 100 },
+          scrollTo: { y: targetElement, offsetY: headerHeight },
           ease: "power2.out"
         });
       }
 
+      // remove active cũ
       document
         .querySelectorAll('#header a[href^="#"]')
         .forEach((a) => a.classList.remove("active"));
+      // add active cho link được click
       this.classList.add("active");
     });
   });
 
-  document.querySelectorAll("section[id]").forEach((section) => {
+  // Scroll active theo section
+  document.querySelectorAll("section[id], footer[id]").forEach((section) => {
     const link = document.querySelector(`#header a[href="#${section.id}"]`);
-
     if (link) {
       ScrollTrigger.create({
         trigger: section,
-        start: "top 100px",
-        end: "bottom 100px",
-        // markers: true,
+        start: "top bottom-=200",
+        end: "bottom bottom-=200",
         onEnter: () => {
-          // Remove active từ tất cả links
-          document.querySelectorAll('#header a[href^="#"]').forEach((a) => {
-            a.classList.remove("active");
-          });
-          // Add active cho link tương ứng
+          document
+            .querySelectorAll('#header a[href^="#"]')
+            .forEach((a) => a.classList.remove("active"));
           link.classList.add("active");
         },
         onEnterBack: () => {
-          // Khi scroll ngược lại
-          document.querySelectorAll('#header a[href^="#"]').forEach((a) => {
-            a.classList.remove("active");
-          });
+          document
+            .querySelectorAll('#header a[href^="#"]')
+            .forEach((a) => a.classList.remove("active"));
           link.classList.add("active");
         }
       });
