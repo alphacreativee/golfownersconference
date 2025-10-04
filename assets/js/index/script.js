@@ -167,10 +167,12 @@ function personalSwiper() {
       breakpoints: {
         0: {
           slidesPerView: 1.3,
-          slidesOffsetAfter: 16
+          slidesOffsetAfter: 16,
+          spaceBetween: 32
         },
         768: {
-          slidesPerView: 2
+          slidesPerView: 2,
+          spaceBetween: 16
         },
         1024: {
           slidesPerView: 2.5
@@ -256,59 +258,37 @@ document.addEventListener("DOMContentLoaded", () => {
 // header
 const headerHeight = document.querySelector("#header").offsetHeight;
 
-document.addEventListener("DOMContentLoaded", function () {
-  gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
+document.querySelectorAll("section[id], footer[id]").forEach((section) => {
+  const link = document.querySelector(`#header a[href="#${section.id}"]`);
+  if (link) {
+    let start, end;
 
-  const header = document.querySelector("#header");
-  const headerHeight = header.offsetHeight;
-
-  // Click scroll + active
-  document.querySelectorAll('#header a[href^="#"]').forEach((link) => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
-      const targetElement = document.querySelector(this.getAttribute("href"));
-      if (targetElement) {
-        gsap.to(window, {
-          duration: 1,
-          scrollTo: { y: targetElement, offsetY: headerHeight },
-          ease: "power2.out"
-        });
-      }
-
-      // remove active cũ
-      document
-        .querySelectorAll('#header a[href^="#"]')
-        .forEach((a) => a.classList.remove("active"));
-      // add active cho link được click
-      this.classList.add("active");
-    });
-  });
-
-  // Scroll active theo section
-  document.querySelectorAll("section[id], footer[id]").forEach((section) => {
-    const link = document.querySelector(`#header a[href="#${section.id}"]`);
-    if (link) {
-      ScrollTrigger.create({
-        trigger: section,
-        start: "top bottom-=200",
-        end: "bottom bottom-=200",
-        onEnter: () => {
-          document
-            .querySelectorAll('#header a[href^="#"]')
-            .forEach((a) => a.classList.remove("active"));
-          link.classList.add("active");
-        },
-        onEnterBack: () => {
-          document
-            .querySelectorAll('#header a[href^="#"]')
-            .forEach((a) => a.classList.remove("active"));
-          link.classList.add("active");
-        }
-      });
+    if (section.tagName.toLowerCase() === "footer") {
+      start = "top bottom";
+      end = "bottom bottom";
+    } else {
+      start = "top bottom-=200";
+      end = "bottom bottom-=200";
     }
-  });
 
-  ScrollTrigger.refresh();
+    ScrollTrigger.create({
+      trigger: section,
+      start: start,
+      end: end,
+      onEnter: () => {
+        document
+          .querySelectorAll('#header a[href^="#"]')
+          .forEach((a) => a.classList.remove("active"));
+        link.classList.add("active");
+      },
+      onEnterBack: () => {
+        document
+          .querySelectorAll('#header a[href^="#"]')
+          .forEach((a) => a.classList.remove("active"));
+        link.classList.add("active");
+      }
+    });
+  }
 });
 
 function effectText() {
