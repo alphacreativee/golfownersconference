@@ -412,6 +412,29 @@ function header() {
       lenis.start();
     }
   });
+
+  if ($(window).width() < 991) {
+    gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.create({
+      start: "top top",
+      end: "bottom bottom",
+      onUpdate: (self) => {
+        const $header = $("#header");
+
+        if (window.scrollY === 0) {
+          $header.removeClass("scroll-down scrolling");
+        } else {
+          $header.addClass("scrolling");
+
+          if (self.direction === 1) {
+            $header.addClass("scroll-down");
+          } else {
+            $header.removeClass("scroll-down");
+          }
+        }
+      }
+    });
+  }
 }
 
 let swiperInstance = null;

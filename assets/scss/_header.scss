@@ -4,6 +4,11 @@
   z-index: 999;
   top: 28px;
   left: 0;
+  transition: transform 0.5s ease-in-out;
+
+  &.scroll-down {
+    transform: translateY(calc(calc(-28px) - 100%));
+  }
 
   .header-container {
     display: grid;
@@ -12,6 +17,8 @@
 
     @media (max-width: 991px) {
       padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
     }
   }
 
