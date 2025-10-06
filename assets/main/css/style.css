@@ -837,7 +837,8 @@ body {
   background: linear-gradient(to bottom, rgba(3, 6, 5, 0.3) 100%, rgba(3, 6, 5, 0) 0%);
   z-index: 1;
 }
-.intro .video video {
+.intro .video video,
+.intro .video img {
   width: 100%;
   height: 100%;
   object-fit: cover;
