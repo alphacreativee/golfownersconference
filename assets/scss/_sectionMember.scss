@@ -128,8 +128,12 @@
   }
 
   .swiper-control {
+    width: 450px;
+    margin: 40px auto 0;
+
     @media (max-width: 991px) {
       padding-right: 20px;
+      width: 100%;
     }
   }
 }

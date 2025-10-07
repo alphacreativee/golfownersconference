@@ -328,7 +328,7 @@ body {
 }
 
 .effect-line .line {
-  line-height: 1.2;
+  line-height: 1.4;
 }
 
 #header {
@@ -911,6 +911,9 @@ body {
     line-height: 20px;
   }
 }
+.intro-brands .title .line {
+  line-height: 1.5;
+}
 .intro-brands .title span {
   color: var(--color-primary);
 }
@@ -1298,9 +1301,14 @@ body {
     padding-bottom: 0;
   }
 }
+.member .swiper-control {
+  width: 450px;
+  margin: 40px auto 0;
+}
 @media (max-width: 991px) {
   .member .swiper-control {
     padding-right: 20px;
+    width: 100%;
   }
 }
 
