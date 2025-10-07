@@ -175,7 +175,7 @@ function personalSwiper() {
           spaceBetween: 16
         },
         1024: {
-          slidesPerView: 2.5
+          slidesPerView: 3.5
         }
       }
     });
