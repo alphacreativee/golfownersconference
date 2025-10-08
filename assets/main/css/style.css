@@ -593,6 +593,8 @@ body {
 }
 .footer-agenda .agenda-main {
   position: relative;
+  max-width: 1446px;
+  margin: 0 auto;
 }
 @media (max-width: 991px) {
   .footer-agenda .agenda-main {
