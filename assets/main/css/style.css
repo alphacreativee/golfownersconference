@@ -1203,6 +1203,34 @@ body {
   background-image: url("../../images/bg-section-member.webp");
   position: relative;
 }
+.member.key-topics {
+  background: url("../../images/bg-mission.png") #030605;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.member.key-topics::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgb(3, 6, 5) 0%, rgba(3, 6, 5, 0.5) 45%, rgba(3, 6, 5, 0.5) 55%, rgb(3, 6, 5) 100%);
+  z-index: 1;
+}
+.member.key-topics .col-personal .personal-item .image::before {
+  content: unset;
+}
+.member.key-topics .col-personal .personal-item .image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 282/200;
+}
+.member.key-topics .col-personal .personal-item .image img {
+  width: 100px;
+  height: auto;
+}
 @media (max-width: 991px) {
   .member .container {
     padding-left: 20px;
